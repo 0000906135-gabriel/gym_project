@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista de Treinos</h1>
+
+<table border="1" cellpadding="10" style="background: white; border-radius: 8px;">
+    <tr style="background: #1e293b; color: white;">
+        <th>Aluno</th>
+        <th>Exercício</th>
+        <th>Séries</th>
+        <th>Repetições</th>
+    </tr>
+
+    {% for treino in treinos %}
+    <tr>
+        <td>{{ treino.aluno.nome }}</td>
+        <td>{{ treino.exercicio.nome }}</td>
+        <td>{{ treino.series }}</td>
+        <td>{{ treino.repeticoes }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">Nenhum treino cadastrado</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Dashboard da Academia</h1>
+
+<div class="card">
+    <h2>👨‍🎓 Alunos</h2>
+    <p>Gerencie os alunos cadastrados</p>
+    <a href="/alunos/" class="btn">Acessar</a>
+</div>
+
+<div class="card">
+    <h2>🏋️ Exercícios</h2>
+    <p>Lista de exercícios</p>
+    <a href="/exercicios/" class="btn">Acessar</a>
+</div>
+
+<div class="card">
+    <h2>📋 Treinos</h2>
+    <p>Treinos montados</p>
+    <a href="/treinos/" class="btn">Acessar</a>
+</div>
+
+{% endblock %}

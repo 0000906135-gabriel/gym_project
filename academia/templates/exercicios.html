@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lista de Exercícios</h1>
+
+<table border="1" cellpadding="10" style="background: white; border-radius: 8px;">
+    <tr style="background: #1e293b; color: white;">
+        <th>Nome</th>
+        <th>Descrição</th>
+    </tr>
+
+    {% for exercicio in exercicios %}
+    <tr>
+        <td>{{ exercicio.nome }}</td>
+        <td>{{ exercicio.descricao }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2">Nenhum exercício cadastrado</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

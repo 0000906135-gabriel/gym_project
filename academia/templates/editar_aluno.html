@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>✏️ Editar Aluno</h1>
+
+<div class="card">
+    <form method="post">
+        {% csrf_token %}
+        <input name="nome" value="{{ aluno.nome }}"><br><br>
+        <input name="email" value="{{ aluno.email }}"><br><br>
+        <input name="idade" value="{{ aluno.idade }}"><br><br>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</div>
+
+{% endblock %}
