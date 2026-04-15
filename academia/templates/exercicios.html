@@ -2,25 +2,31 @@
 
 {% block content %}
 
-<h1>Lista de Exercícios</h1>
+<h1>🏋️ Exercícios</h1>
 
-<table border="1" cellpadding="10" style="background: white; border-radius: 8px;">
-    <tr style="background: #1e293b; color: white;">
-        <th>Nome</th>
-        <th>Descrição</th>
-    </tr>
+{% if mensagem %}
+<div class="mensagem">{{ mensagem }}</div>
+{% endif %}
 
-    {% for exercicio in exercicios %}
-    <tr>
-        <td>{{ exercicio.nome }}</td>
-        <td>{{ exercicio.descricao }}</td>
-    </tr>
-    {% empty %}
-    <tr>
-        <td colspan="2">Nenhum exercício cadastrado</td>
-    </tr>
-    {% endfor %}
+<div class="card">
+    <form method="post">
+        {% csrf_token %}
+        <input name="nome" placeholder="Nome"><br><br>
+        <input name="descricao" placeholder="Descrição"><br><br>
+        <button>Salvar</button>
+    </form>
+</div>
 
-</table>
+<div class="card">
+{% for e in exercicios %}
+    <div class="tarefa">
+        <strong>{{ e.nome }}</strong><br>
+        {{ e.descricao }}<br><br>
+
+        <a href="/editar-exercicio/{{ e.id }}/">✏️</a> |
+        <a href="/deletar-exercicio/{{ e.id }}/">❌</a>
+    </div>
+{% endfor %}
+</div>
 
 {% endblock %}

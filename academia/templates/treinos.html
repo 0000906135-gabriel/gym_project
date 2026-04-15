@@ -2,29 +2,44 @@
 
 {% block content %}
 
-<h1>Lista de Treinos</h1>
+<h1>📋 Treinos</h1>
 
-<table border="1" cellpadding="10" style="background: white; border-radius: 8px;">
-    <tr style="background: #1e293b; color: white;">
-        <th>Aluno</th>
-        <th>Exercício</th>
-        <th>Séries</th>
-        <th>Repetições</th>
-    </tr>
+{% if mensagem %}
+<div class="mensagem">{{ mensagem }}</div>
+{% endif %}
 
-    {% for treino in treinos %}
-    <tr>
-        <td>{{ treino.aluno.nome }}</td>
-        <td>{{ treino.exercicio.nome }}</td>
-        <td>{{ treino.series }}</td>
-        <td>{{ treino.repeticoes }}</td>
-    </tr>
-    {% empty %}
-    <tr>
-        <td colspan="4">Nenhum treino cadastrado</td>
-    </tr>
-    {% endfor %}
+<div class="card">
+<form method="post">
+    {% csrf_token %}
 
-</table>
+    <select name="aluno">
+        {% for a in alunos %}
+        <option value="{{ a.id }}">{{ a.nome }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <select name="exercicio">
+        {% for e in exercicios %}
+        <option value="{{ e.id }}">{{ e.nome }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <input name="series" placeholder="Séries"><br><br>
+    <input name="repeticoes" placeholder="Repetições"><br><br>
+
+    <button>Salvar</button>
+</form>
+</div>
+
+<div class="card">
+{% for t in treinos %}
+    <div class="tarefa">
+        {{ t.aluno.nome }} - {{ t.exercicio.nome }}<br>
+        {{ t.series }}x{{ t.repeticoes }}<br><br>
+
+        <a href="/deletar-treino/{{ t.id }}/">❌</a>
+    </div>
+{% endfor %}
+</div>
 
 {% endblock %}
