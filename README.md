@@ -30,7 +30,7 @@ Aplicação web desenvolvida com Django para gerenciamento de uma academia, perm
 ###  1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/academia_project.git
+git clone https://github.com/0000906135-gabriel/gym_project
 cd academia_project
 
 2. Criar ambiente virtual
