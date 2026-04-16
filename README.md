@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 Sistema de Academia (Django)
 
 Aplicação web desenvolvida com Django para gerenciamento de uma academia, permitindo o controle de alunos, exercícios e treinos de forma simples e eficiente.
