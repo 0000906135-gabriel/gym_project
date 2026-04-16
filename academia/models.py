@@ -6,7 +6,7 @@ class Aluno(models.Model):
     idade = models.IntegerField()
 
     def __str__(self):
-        return self.nome
+        return self.nome 
 
 
 class Exercicio(models.Model):
