@@ -3,68 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <title>Academia System</title>
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f4f6f9;
+
+            /* 🔥 DEGRADÊ SUAVE */
+            background: linear-gradient(135deg,
+                #dc2626 0%,
+                #b91c1c 25%,
+                #7f1d1d 40%,
+                #111 60%,
+                #000 100%
+            );
+
+            min-height: 100vh;
+            color: white;
         }
 
         header {
-            background: #1e293b;
-            color: white;
-            padding: 15px;
             text-align: center;
-            font-size: 20px;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         nav {
-            background: #334155;
-            padding: 10px;
             text-align: center;
+            margin-bottom: 30px;
         }
 
         nav a {
             color: white;
-            margin: 10px;
+            margin: 15px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: #facc15;
         }
 
         .container {
-            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 🔥 CARDS */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 10px;
-            display: inline-block;
-            width: 250px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
+            background: rgba(117, 110, 110, 0.6); /* 🔥 cinza escuro */
+             backdrop-filter: blur(10px);
+             padding: 30px;
+             border-radius: 15px;
+             width: 220px;
+             text-align: center;
+             cursor: pointer;
+
+             transition: 0.3s;
+             border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ✨ HOVER */
+        .card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        /* 💥 CLICK */
+        .card:active {
+            transform: scale(0.97);
+        }
+
+        /* 🎯 ÍCONES */
+        h1, h2 {
+            letter-spacing: 1px;
         }
 
         .card h2 {
-            margin: 10px 0;
+            color: white; /* cinza mais escuro */
+            transition: 0.3s;
+        }
+
+        .card:hover h2 {
+            color: white; /* muda no hover */
         }
 
         .btn {
             display: inline-block;
+            margin-top: 10px;
             padding: 10px 15px;
-            background: #2563eb;
-            color: white;
+            background: #facc15;
+            color: black;
             border-radius: 5px;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .btn:hover {
-            background: #1d4ed8;
+            background: #fde047;
         }
     </style>
 </head>

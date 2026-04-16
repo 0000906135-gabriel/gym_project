@@ -74,7 +74,6 @@ def editar_exercicio(request, id):
 
     return render(request, 'editar_exercicio.html', {'exercicio': exercicio})
 
-
 def deletar_exercicio(request, id):
     Exercicio.objects.get(id=id).delete()
     return redirect('/exercicios/')

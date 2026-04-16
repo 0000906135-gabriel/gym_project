@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Editar Exercício</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="nome" value="{{ exercicio.nome }}" required><br><br>
+
+    <textarea name="descricao" required>{{ exercicio.descricao }}</textarea><br><br>
+
+    <button type="submit">Salvar</button>
+</form>
+
+{% endblock %}
